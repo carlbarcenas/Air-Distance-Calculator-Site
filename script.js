@@ -16,7 +16,7 @@ function getAirDistance(lat1, lon1, lat2, lon2) {
     return d;
 }
 
-// Calculate
+// Calculate Button
 const calculate = document.querySelector('#calculateBtn');
 calculate.addEventListener('click', () => {
     // Get input values from textbox
@@ -30,3 +30,23 @@ calculate.addEventListener('click', () => {
     var outputText = document.querySelector('#output');
     outputText.textContent = `Calculated Air Distance: ${result}km`;
 })
+
+// MAP SECTION: --------------------------------------------------------------------------------------
+// Initialize Map
+var myMap = L.map('map', {center:[38, -77], zoom:12, zoomControl:false});
+var lyrOSM = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+myMap.addLayer(lyrOSM);
+
+// Initialize Geocoder
+L.Control.geocoder().addTo(myMap);
+
+myMap.on('geosearch/showlocation', function(result) {
+    console.log(result.x, result.y);
+})
+
+// TODO: Get Lat / Long of Address
+/*
+document.addEventListener('click', (e) => {
+    console.log(myMap.getBounds().getCenter()); // This only gets the center of map lat and long
+})
+*/

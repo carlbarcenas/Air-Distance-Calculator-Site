@@ -72,7 +72,8 @@ button:active {
 }
 
 .address {
-    cursor: pointer
+    cursor: pointer;
+    border-bottom: 1px dotted black;
 }
 
 .address:hover {

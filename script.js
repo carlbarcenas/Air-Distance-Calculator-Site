@@ -81,7 +81,7 @@ function chooseAddr(lat1, lng1) {
 }
 
 function myFunction(arr) {
-    var out = "<br />";
+    var out = "";
     var i;
 
     if (arr.length > 0) {

@@ -15,23 +15,27 @@ function getAirDistance(lat1, lon1, lat2, lon2) {
     const d = R * c; // in metres
     return d;
 }
+function removeTransition(e) {
+    if(e.propertyName !== 'transform') return; // Skip if not a transform
+    this.classList.remove('calculating');
+}
 
 // Calculate Button
 const calculate = document.querySelector('#calculateBtn');
+var outputText = document.querySelector('#output');
 calculate.addEventListener('click', () => {
     // Get input values from textbox
-    var lat1 = document.getElementById('lat1').value; // Latitude is -90 to 90 deg
-    var lon1 = document.getElementById('lon1').value; // Longitude is -180 to 180 deg
-    var lat2 = document.getElementById('lat2').value;
-    var lon2 = document.getElementById('lon2').value;
+    var coordA = document.getElementById('coordA').value.split(',');
+    var coordB = document.getElementById('coordB').value.split(',');
 
     // Calculate result and output
-    var result = getAirDistance(lat1, lon1, lat2, lon2).toFixed(2);
-    var outputText = document.querySelector('#output');
+    var result = getAirDistance(parseFloat(coordA[0]), parseFloat(coordA[1]),
+        parseFloat(coordB[0]), parseFloat(coordB[1])).toFixed(2);
     outputText.textContent = `Calculated Air Distance: ${result}km`;
 
     outputText.classList.add('calculating');
 })
+outputText.addEventListener('transitionend', removeTransition);
 
 
 // MAP AND ADDRESS LOOKUP: --------------------------------------------------------------------------------------
@@ -89,7 +93,6 @@ function myFunction(arr) {
     else {
         document.getElementById('results').innerHTML = "Sorry, no results...";
     }
-
 }
 
 function addr_search() {
@@ -110,10 +113,14 @@ function addr_search() {
 var pointA_btn = document.querySelector('#setA_btn');
 var pointB_btn = document.querySelector('#setB_btn');
 pointA_btn.addEventListener('click', () => {
-    document.querySelector('#lat1').value = document.querySelector('#addrLat').value;
-    document.querySelector('#lon1').value = document.querySelector('#addrLon').value;
+    var lat = document.querySelector('#addrLat').value;
+    var lon = document.querySelector('#addrLon').value;
+    var string = `${lat}, ${lon}`;
+    document.querySelector('#coordA').value = string;
 })
 pointB_btn.addEventListener('click', () => {
-    document.querySelector('#lat2').value = document.querySelector('#addrLat').value;
-    document.querySelector('#lon2').value = document.querySelector('#addrLon').value;
+    var lat = document.querySelector('#addrLat').value;
+    var lon = document.querySelector('#addrLon').value;
+    var string = `${lat}, ${lon}`;
+    document.querySelector('#coordB').value = string;
 })

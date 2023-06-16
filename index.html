@@ -16,15 +16,20 @@
 
     <!--Fonts-->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
     </style>
+
+    <!--Icon-->
+    <link rel="icon" href="pngwing.com.png">
 
     <title>Air Distance Calculator</title>
 </head>
 
 <body>
-    <h1 id="titleText">Air Distance Calculator</h1>
-
+    <div id="header">
+        <img src="pngwing.com.png">
+        <h1 id="titleText">Air Distance Calculator</h1>
+    </div>
     <div id="geocode_container">
         <!--Map-->
         <div id="map"></div>
@@ -38,7 +43,7 @@
                 <button type="button" onclick="addr_search();">Search</button>
                 <div id="results"></div>
             </div>
-            <b>Address Coordinates: </b>
+            <b>Address Coordinates (Lat / Long): </b>
             <div id="addrCoords">
                 <input type="text" id="addrLat" placeholder="Address Latitude" readonly>
                 <input type="text" id="addrLon" placeholder="Address Longitude" readonly>
@@ -54,16 +59,15 @@
     <!--Coordinate Inputs-->
     <div id="input">
         <h1>Calculation Inputs: </h1>
+        <p>Type input as (latitude, longitude) without parenthesis.</p>
         <div id="input_controls">
             <div id="pointA" class="point">
                 <h2>Point A: </h2>
-                <input id="lat1" type="text" placeholder="Latitude" min="-90" max="90">
-                <input id="lon1" type="text" placeholder="Longitude" min="-180" max="180">
+                <input id="coordA" type="text" placeholder="Latitude,Longitude">
             </div>
             <div id="pointB" class="point">
                 <h2>Point B: </h2>
-                <input id="lat2" type="text" placeholder="Latitude" min="-90" max="90">
-                <input id="lon2" type="text" placeholder="Longitude" min="-180" max="180">
+                <input id="coordB" type="text" placeholder="Latitude,Longitude">
             </div>
             <button id="calculateBtn">Calculate</button>
         </div>

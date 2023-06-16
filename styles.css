@@ -1,5 +1,37 @@
 * {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    background-color: #FFFFFF;
+}
+
+button {
+    border-radius: 16px;
+    padding: 6px 16px;
+    margin-top: 4px;
+    background: #d3e3fc;
+    border: 0;
+}
+
+button:hover {
+    transition: 0.3s all;
+    background: #77a6f7;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header img {
+    height: 50px;
+    padding-right: 10px;
 }
 
 #titleText {
@@ -13,6 +45,7 @@
 #geocode_container {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 #map {
@@ -28,7 +61,6 @@
 #controls_container {
     width: 23vw;
     padding-left: 1vw;
-    border: 1px solid black;
 }
 
 #search {
@@ -57,7 +89,13 @@
 }
 
 #input h1 {
-    margin-bottom: 0;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+#input p {
+    margin: 0;
+    border-bottom: 1px solid black;
 }
 
 #input_controls {
@@ -74,10 +112,30 @@
 #input_controls button {
     width: 240px;
     height: 60px;
+    font-size: 14px;
+    font-weight: bold;
+
+    margin-top: auto;
+    border-radius: 30px;
 }
 
 /* Output */
 #output {
-    display: flex;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     justify-content: center;
+
+    transition: all .9s ease;
+    width: 30vw;
+    text-align: center;
+    color: black;
+    background: #d3e3fc;
+    text-shadow: 0 0 .5rem #77a6f7;
+}
+
+.calculating {
+    transform: scale(1.1);
+    border-color: #77a6f7;
+    box-shadow: 0 0 1rem #77a6f7;
 }

@@ -81,8 +81,3 @@
     display: flex;
     justify-content: center;
 }
-
-#output.fade {
-    transition: all 1s ease;
-    text-shadow: 0 0 12px yellow;
-}

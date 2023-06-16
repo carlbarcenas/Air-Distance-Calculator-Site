@@ -31,7 +31,7 @@ calculate.addEventListener('click', () => {
     // Calculate result and output
     var result = getAirDistance(parseFloat(coordA[0]), parseFloat(coordA[1]),
         parseFloat(coordB[0]), parseFloat(coordB[1])).toFixed(2);
-    outputText.textContent = `Calculated Air Distance: ${result}km`;
+    outputText.textContent = `Distance: ${result}km`;
 
     outputText.classList.add('calculating');
 })

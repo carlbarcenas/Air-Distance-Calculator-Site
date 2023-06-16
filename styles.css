@@ -2,9 +2,22 @@
 * {
     border: 1px solid black;
 }*/
+#titleText {
+    display: flex;
+    justify-content: center;
+}
+
+#geocode_container {
+    display: flex;
+}
 
 #map {
     height: 40vh;
+    width: 75vw;
+}
+
+#controls_container {
+    width: 25vw;
 }
 
 #inputs {

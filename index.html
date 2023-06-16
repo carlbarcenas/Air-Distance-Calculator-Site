@@ -21,33 +21,44 @@
 <body>
     <h1 id="titleText">Air Distance Calculator</h1>
 
-    <!--Map and Address Lookup-->
-    <div id="map"></div>
+    <div id="geocode_container">
+        <!--Map-->
+        <div id="map"></div>
 
-    <!--
-    <b>Address Lookup</b>
-    <div id="addrLookup">
-        <input type="text" name="addr" value="" id="addr" size="58" />
-        <button type="button" onclick="addr_search();">Search</button>
-        <div id="results"></div>
-    </div>
-    -->
-    <div id="pointButtons">
-        <button id="setA_btn">Set Point A</button>
-        <button>Set Point B</button>
-    </div>
+        <!--Address Lookup Controls-->
+        <div id="controls_container">
+            <!--Address Lookup-->
+            <b>Address Lookup: </b>
+            <div id="search">
+                <input type="text" name="addr" value="" id="addr" size="58" />
+                <button type="button" onclick="addr_search();">Search</button>
+                <div id="results"></div>
+            </div>
+            <b>Lookup Results: </b>
+            <div id="addrCoords">
+                <input type="text" id="addrLat" placeholder="Address Latitude" readonly>
+                <input type="text" id="addrLon" placeholder="Address Longitude" readonly>
+            </div>
+            <div id="pointButtons">
+                <button id="setA_btn">Set Point A</button>
+                <button id="setB_btn">Set Point B</button>
+            </div>
+        </div>
 
+
+    </div>
+    
     <!--Coordinate Inputs-->
     <div id="inputs">
         <div id="pointA">
             <h2>Point A: </h2>
-            <input id="lat1" type="number" placeholder="Latitude" min="-90" max="90">
-            <input id="lon1" type="number" placeholder="Longitude" min="-180" max="180">
+            <input id="lat1" type="text" placeholder="Latitude" min="-90" max="90">
+            <input id="lon1" type="text" placeholder="Longitude" min="-180" max="180">
         </div>
         <div id="pointB">
             <h2>Point B: </h2>
-            <input id="lat2" type="number" placeholder="Latitude" min="-90" max="90">
-            <input id="lon2" type="number" placeholder="Longitude" min="-180" max="180">
+            <input id="lat2" type="text" placeholder="Latitude" min="-90" max="90">
+            <input id="lon2" type="text" placeholder="Longitude" min="-180" max="180">
         </div>
         <button id="calculateBtn">Calculate</button>
     </div>
@@ -56,6 +67,7 @@
     <h1 id="output">Calculated Air Distance: 0.00km</h1>
 
 
+    
     <script src="script.js"></script>
 </body>
 

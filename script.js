@@ -29,7 +29,10 @@ calculate.addEventListener('click', () => {
     var result = getAirDistance(lat1, lon1, lat2, lon2).toFixed(2);
     var outputText = document.querySelector('#output');
     outputText.textContent = `Calculated Air Distance: ${result}km`;
+
+    outputText.classList.add('calculating');
 })
+
 
 // MAP AND ADDRESS LOOKUP: --------------------------------------------------------------------------------------
 // Initialize Map

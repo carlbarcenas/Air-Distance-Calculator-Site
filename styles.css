@@ -1,25 +1,88 @@
-/* 
 * {
-    border: 1px solid black;
-}*/
+    font-family: 'Nunito', sans-serif;
+}
+
 #titleText {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Geocode and Map */
+#geocode_container {
     display: flex;
     justify-content: center;
 }
 
-#geocode_container {
-    display: flex;
-}
-
 #map {
     height: 40vh;
-    width: 75vw;
+    width: 50vw;
+}
+
+/* Controls Sidebar */
+#controls_container b {
+    font-weight: 400;
 }
 
 #controls_container {
-    width: 25vw;
+    width: 23vw;
+    padding-left: 1vw;
+    border: 1px solid black;
 }
 
-#inputs {
+#search {
+    padding-bottom: 50px;
+}
+
+#addr {
+    width: 20vw;
+}
+
+.address {
+    cursor: pointer
+}
+
+.address:hover {
+    transition: all 1s ease;
+    color: #AA0000;
+    text-decoration: underline
+}
+
+/* Inputs */
+#input {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#input h1 {
+    margin-bottom: 0;
+}
+
+#input_controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.point {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#input_controls button {
+    width: 240px;
+    height: 60px;
+}
+
+/* Output */
+#output {
+    display: flex;
+    justify-content: center;
+}
+
+#output.fade {
+    transition: all 1s ease;
+    text-shadow: 0 0 12px yellow;
 }

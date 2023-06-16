@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
+    <!--Fonts-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+    </style>
 
     <title>Air Distance Calculator</title>
 </head>
@@ -30,11 +34,11 @@
             <!--Address Lookup-->
             <b>Address Lookup: </b>
             <div id="search">
-                <input type="text" name="addr" value="" id="addr" size="58" />
+                <input type="text" name="addr" value="" id="addr" />
                 <button type="button" onclick="addr_search();">Search</button>
                 <div id="results"></div>
             </div>
-            <b>Lookup Results: </b>
+            <b>Address Coordinates: </b>
             <div id="addrCoords">
                 <input type="text" id="addrLat" placeholder="Address Latitude" readonly>
                 <input type="text" id="addrLon" placeholder="Address Longitude" readonly>
@@ -45,29 +49,31 @@
             </div>
         </div>
 
-
     </div>
-    
+
     <!--Coordinate Inputs-->
-    <div id="inputs">
-        <div id="pointA">
-            <h2>Point A: </h2>
-            <input id="lat1" type="text" placeholder="Latitude" min="-90" max="90">
-            <input id="lon1" type="text" placeholder="Longitude" min="-180" max="180">
+    <div id="input">
+        <h1>Calculation Inputs: </h1>
+        <div id="input_controls">
+            <div id="pointA" class="point">
+                <h2>Point A: </h2>
+                <input id="lat1" type="text" placeholder="Latitude" min="-90" max="90">
+                <input id="lon1" type="text" placeholder="Longitude" min="-180" max="180">
+            </div>
+            <div id="pointB" class="point">
+                <h2>Point B: </h2>
+                <input id="lat2" type="text" placeholder="Latitude" min="-90" max="90">
+                <input id="lon2" type="text" placeholder="Longitude" min="-180" max="180">
+            </div>
+            <button id="calculateBtn">Calculate</button>
         </div>
-        <div id="pointB">
-            <h2>Point B: </h2>
-            <input id="lat2" type="text" placeholder="Latitude" min="-90" max="90">
-            <input id="lon2" type="text" placeholder="Longitude" min="-180" max="180">
-        </div>
-        <button id="calculateBtn">Calculate</button>
     </div>
 
     <!--Results-->
     <h1 id="output">Calculated Air Distance: 0.00km</h1>
 
 
-    
+
     <script src="script.js"></script>
 </body>
 
